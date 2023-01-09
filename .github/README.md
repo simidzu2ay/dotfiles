@@ -1,4 +1,4 @@
-### My personal dotfiles
+## My personal dotfiles
 
 ### Software
 * WM: `Hyprland`
@@ -8,3 +8,9 @@
 * Launcher: `wofi`
 * Lockscreen: `swaylock`
 * Code Editor: `neovim`
+* Notify: `mako`
+
+
+### Screenshots
+![Neovim + Neofetch](./screenshots/1.png)
+
