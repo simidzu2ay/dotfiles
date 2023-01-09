@@ -1,0 +1,15 @@
+#!/bin/bash
+export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
+export GTK_THEME=Adwaita:dark
+export GPG_TTY=$(tty)
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
+
+export EDITOR=nvim
+
+exec Hyprland
