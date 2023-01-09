@@ -1,0 +1,112 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": ["wlr/workspaces", "custom/media", "custom/recorder"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "hyprland/language",
+    "battery",
+    "clock",
+  ],
+  "custom/recorder": {
+    "exec-if": "pgrep wf-recorder",
+    "exec": "pgrep wf-recorder",
+    "on-click": "killall -SIGINT wf-recorder",
+    "interval": 1,
+    "format": "[ STOP ]"
+  },
+  "hyprland/language": {
+    "format": "[ {}  ]"
+  },
+  "wlr/workspaces": {
+    "format": "<big>{icon}</big>",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "切",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "format": "[ {:%H:%M} ]",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "[ {:%Y-%m-%d} ]"
+  },
+  "cpu": {
+    "format": "[ {usage}%  ]",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "[ {}%  ]"
+  },
+  "backlight": {
+    "device": "amdgpu_bl0",
+    "format": "[ {percent}% {icon} ]",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "light -A 1",
+    "on-scroll-down": "light -U 1",
+    "smooth-scrolling-threshold": 3
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "[ {capacity}% {icon} ]",
+    "format-charging": "[ {capacity}%  ]",
+    "format-plugged": "[ {capacity}%  ]",
+    "format-alt": "[ {time} {icon} ]",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "format-wifi": "[ ({signalStrength}%)  ]",
+    "format-ethernet": "[ {ipaddr}/{cidr}  ]",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "[ {ifname} (No IP)  ]",
+    "format-disconnected": "[ Disconnected ⚠ ]",
+    "format-alt": "[ {ifname}: {ipaddr}/{cidr} ]"
+  },
+  "pulseaudio": {
+    "smooth-scrolling-threshold": 3,
+    "format": "[ {volume}% {icon} {format_source} ]",
+    "format-bluetooth": "[ {volume}% {icon} {format_source} ]",
+    "format-bluetooth-muted": "[  {icon} {format_source} ]",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+  }
+}
