@@ -5,6 +5,7 @@
 * Gif & Screenshots: `slurp`, `grim`, `wf-recorder`
 * Bar: `waybar`
 * Terminal: `foot`
+* Shell: `fish`
 * Launcher: `wofi`
 * Lockscreen: `swaylock`
 * Code Editor: `neovim`
