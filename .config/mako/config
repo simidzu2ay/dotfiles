@@ -14,3 +14,6 @@ border-color=#e5c07b
 
 [urgency=high]
 border-color=#e06c75
+
+[app-name=discord]
+border-color=#c678dd
