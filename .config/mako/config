@@ -1,1 +1,15 @@
 default-timeout=5000
+max-history=3
+background-color=#282c34
+text-color=#abb2bf
+border-color=#c678dd
+border-radius=4
+
+[urgency=low]
+border-color=#98c379
+
+[urgency=normal]
+border-color=#e5c07b
+
+[urgency=high]
+border-color=#e06c75
