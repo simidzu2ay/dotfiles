@@ -4,16 +4,12 @@
 
 #input {
     margin-bottom: 10px;
-    background-color: #282c34;
 }
 
 #input, #scroll {
     border-color: #c678dd;
     border-style: solid;
     border-width: 2px;
-}
-
-#inner-box {
     background-color: #282c34;
 }
 
