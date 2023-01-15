@@ -20,6 +20,8 @@ opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
 
+opt.autoread = true
+
 opt.wrap = false
 opt.scrolloff = 8
 
