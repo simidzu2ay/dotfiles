@@ -15,4 +15,5 @@
 ### Screenshots
 ![Neovim + Neofetch](./screenshots/1.png)
 ![Mako + Wofi](./screenshots/2.png)
+![Shell](./screenshots/3.png)
 
