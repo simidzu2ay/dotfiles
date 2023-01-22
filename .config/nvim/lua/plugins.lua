@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
     use { 'jose-elias-alvarez/null-ls.nvim' }
     use { "b0o/schemastore.nvim" }
 
+
+    use { 'onsails/lspkind.nvim' }
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {

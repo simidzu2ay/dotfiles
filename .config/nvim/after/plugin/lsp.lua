@@ -2,6 +2,10 @@ local status_ok, lsp = pcall(require, 'lsp-zero')
 if not status_ok then
     return
 end
+local is_ok, lspkind = pcall(require, 'lspkind')
+if not is_ok then
+    return
+end
 
 vim.opt.signcolumn = 'yes'
 lsp.preset('recommended')
@@ -69,6 +73,47 @@ local on_attach = function(client, bufnr)
 end
 
 lsp.on_attach(on_attach)
+
+
+
+local cmp_kinds = {
+    Text = '  ',
+    Method = '  ',
+    Function = '  ',
+    Constructor = '  ',
+    Field = '  ',
+    Variable = '  ',
+    Class = '  ',
+    Interface = '  ',
+    Module = '  ',
+    Property = '  ',
+    Unit = '  ',
+    Value = '  ',
+    Enum = '  ',
+    Keyword = '  ',
+    Snippet = "  ",
+    Color = '  ',
+    File = '  ',
+    Reference = '  ',
+    Folder = '  ',
+    EnumMember = '  ',
+    Constant = '  ',
+    Struct = '  ',
+    Event = '  ',
+    Operator = '  ',
+    TypeParameter = '  ',
+}
+
+
+lsp.setup_nvim_cmp({
+    formatting = {
+        fields = { "abbr", "kind" },
+        format = function(_, vim_item)
+            vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
+            return vim_item
+        end,
+    },
+})
 
 lsp.nvim_workspace()
 lsp.setup()
