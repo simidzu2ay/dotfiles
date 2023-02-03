@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'mrjones2014/nvim-ts-rainbow' }
     use { 'navarasu/onedark.nvim' }
     use {
         'nvim-telescope/telescope.nvim',
@@ -41,9 +42,16 @@ return require('packer').startup(function(use)
 
     use { 'jose-elias-alvarez/null-ls.nvim' }
     use { "b0o/schemastore.nvim" }
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+    }
 
 
     use { 'onsails/lspkind.nvim' }
+    use 'mfussenegger/nvim-dap'
+
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
