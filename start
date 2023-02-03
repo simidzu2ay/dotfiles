@@ -14,4 +14,7 @@ export QT_QPA_PLATFORMTHEME=gtk3
 
 export EDITOR=nvim
 
+export JAVA_HOME=/usr/lib/jvm/default
+
+
 exec Hyprland
