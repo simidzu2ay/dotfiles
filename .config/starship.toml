@@ -49,6 +49,10 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+style = '#DE73FF bold'
+[git_status]
+style = '#DE73FF bold'
+
 
 [golang]
 symbol = " "
